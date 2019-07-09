@@ -8,20 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>GitHub+Hexo 搭建个人网站 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装 Hexo1$ npm install -g hexo-cli  1、新建项目并启动12345$ hexo init blog$ cd blog$ npm i$ hexo new &quot;我的第一篇博客&quot; // 新建markdown文件，可编辑，保存$ hexo s // ==server 预览 localhost:4000  关联 github1、新建 GitHub 项目 2、安装 git 部署插">
+  <meta name="description" content="安装 Hexo1$ npm install -g hexo-cli  新建项目并启动 12345$ hexo init blog$ cd blog$ npm i$ hexo new &quot;我的第一篇博客&quot; // 新建markdown文件(source文件夹中的_post文件夹下)，编辑保存$ hexo s // hexo server 预览 本地访问localhost:4000  关联 github1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub+Hexo 搭建个人网站">
 <meta property="og:url" content="http://yoursite.com/2019/07/08/First/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装 Hexo1$ npm install -g hexo-cli  1、新建项目并启动12345$ hexo init blog$ cd blog$ npm i$ hexo new &quot;我的第一篇博客&quot; // 新建markdown文件，可编辑，保存$ hexo s // ==server 预览 localhost:4000  关联 github1、新建 GitHub 项目 2、安装 git 部署插">
+<meta property="og:description" content="安装 Hexo1$ npm install -g hexo-cli  新建项目并启动 12345$ hexo init blog$ cd blog$ npm i$ hexo new &quot;我的第一篇博客&quot; // 新建markdown文件(source文件夹中的_post文件夹下)，编辑保存$ hexo s // hexo server 预览 本地访问localhost:4000  关联 github1">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/image/step1.jpg">
 <meta property="og:image" content="http://yoursite.com/image/step2.jpg">
 <meta property="og:image" content="http://yoursite.com/image/step3.jpg">
-<meta property="og:updated_time" content="2019-07-08T10:37:46.432Z">
+<meta property="og:image" content="http://yoursite.com/image/step4.jpg">
+<meta property="og:updated_time" content="2019-07-09T02:08:07.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub+Hexo 搭建个人网站">
-<meta name="twitter:description" content="安装 Hexo1$ npm install -g hexo-cli  1、新建项目并启动12345$ hexo init blog$ cd blog$ npm i$ hexo new &quot;我的第一篇博客&quot; // 新建markdown文件，可编辑，保存$ hexo s // ==server 预览 localhost:4000  关联 github1、新建 GitHub 项目 2、安装 git 部署插">
+<meta name="twitter:description" content="安装 Hexo1$ npm install -g hexo-cli  新建项目并启动 12345$ hexo init blog$ cd blog$ npm i$ hexo new &quot;我的第一篇博客&quot; // 新建markdown文件(source文件夹中的_post文件夹下)，编辑保存$ hexo s // hexo server 预览 本地访问localhost:4000  关联 github1">
 <meta name="twitter:image" content="http://yoursite.com/image/step1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -174,15 +175,28 @@
       
         <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="1、新建项目并启动"><a href="#1、新建项目并启动" class="headerlink" title="1、新建项目并启动"></a>1、新建项目并启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm i</span><br><span class="line">$ hexo new <span class="string">"我的第一篇博客"</span> // 新建markdown文件，可编辑，保存</span><br><span class="line">$ hexo s // ==server 预览 localhost:4000</span><br></pre></td></tr></table></figure>
+<p>新建项目并启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm i</span><br><span class="line">$ hexo new <span class="string">"我的第一篇博客"</span> // 新建markdown文件(<span class="built_in">source</span>文件夹中的_post文件夹下)，编辑保存</span><br><span class="line">$ hexo s // hexo server 预览 本地访问localhost:4000</span><br></pre></td></tr></table></figure>
 
-<h2 id="关联-github"><a href="#关联-github" class="headerlink" title="关联 github"></a>关联 github</h2><h3 id="1、新建-GitHub-项目"><a href="#1、新建-GitHub-项目" class="headerlink" title="1、新建 GitHub 项目"></a>1、新建 GitHub 项目</h3><p><img src="/image/step1.jpg" alt="avatar"><br><img src="/image/step2.jpg" alt="avatar"></p>
-<h3 id="2、安装-git-部署插件"><a href="#2、安装-git-部署插件" class="headerlink" title="2、安装 git 部署插件"></a>2、安装 git 部署插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h2 id="关联-github"><a href="#关联-github" class="headerlink" title="关联 github"></a>关联 github</h2><p>1、新建 GitHub 项目，注意名字</p>
+<p><img src="/image/step1.jpg" alt="avatar"></p>
+<hr>
+<p><img src="/image/step2.jpg" alt="avatar"></p>
+<p>2、安装 git 部署插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-<h3 id="3、添加配置-config-yml"><a href="#3、添加配置-config-yml" class="headerlink" title="3、添加配置 _config.yml"></a>3、添加配置 _config.yml</h3><p><img src="/image/step3.jpg" alt="avatar"></p>
-<h3 id="4、依次输入命令"><a href="#4、依次输入命令" class="headerlink" title="4、依次输入命令"></a>4、依次输入命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ haxo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ haxo g // hexo generate 生成静态文件</span><br><span class="line">$ haxo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
+<p>3、添加配置 _config.yml</p>
+<p><img src="/image/step3.jpg" alt="avatar"></p>
+<p>4、依次输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ haxo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ haxo g // hexo generate 生成静态文件</span><br><span class="line">$ haxo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
 
-<h3 id="5、访问网站"><a href="#5、访问网站" class="headerlink" title="5、访问网站"></a>5、访问网站</h3><p><a href="https://anywayshe.github.com/#" target="_blank" rel="noopener">https://anywayshe.github.com/#</a> // 新建项目的名字</p>
+<p>5、访问网站</p>
+<p><a href="https://anywayshe.github.cn/#" target="_blank" rel="noopener">https://anywayshe.github.cn/#</a> // 新建项目的名字，有延迟，多刷几遍</p>
+<p>6、切换主题</p>
+<p>以 yilia 为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia // 克隆到themes文件夹，名为yilia</span><br></pre></td></tr></table></figure>
+
+<p>更改配置文件_config.yml<br><img src="/image/step4.jpg" alt="avatar"></p>
 
       
 
