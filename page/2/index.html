@@ -146,6 +146,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-GitHub+Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/08/GitHub+Hexo/">GitHub+Hexo 搭建个人网站</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/08/GitHub+Hexo/" class="archive-article-date">
+  	<time datetime="2018-07-08T08:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>新建项目并启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm i</span><br><span class="line">$ hexo new <span class="string">"我的第一篇博客"</span> // 新建markdown文件(<span class="built_in">source</span>文件夹中的_post文件夹下)，编辑保存</span><br><span class="line">$ hexo s // hexo server 预览 本地访问localhost:4000</span><br></pre></td></tr></table></figure>
+
+<h2 id="关联-github"><a href="#关联-github" class="headerlink" title="关联 github"></a>关联 github</h2><p>1、新建 GitHub 项目，命名 username.github.io, username 为你 Github 的用户名，如 anywayshe.github.io<br>注：<font color="#FFD700">github 创建静态博客只能按照命名规则，且只有一个</font></p>
+<hr>
+<p>创建成功项目地址：<a href="https://github.com/anywayshe/anywayshe.github.io.git" target="_blank" rel="noopener">https://github.com/anywayshe/anywayshe.github.io.git</a></p>
+<p>2、安装 git 部署插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>3、添加配置 _config.yml</p>
+<p><img src="/image/step3.jpg" alt="avatar"></p>
+<p>4、依次输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ haxo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ haxo g // hexo generate 生成静态文件</span><br><span class="line">$ haxo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
+
+<p>5、访问网站</p>
+<p>可以先刷新你的 github 仓库，看到本地代码已上传</p>
+<p><a href="https://anywayshe.github.io/#" target="_blank" rel="noopener">https://anywayshe.github.io/#</a> // 新建项目的名字，有延迟，多刷几遍</p>
+<p>6、切换主题</p>
+<p>以 yilia 为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia // 克隆到themes文件夹，名为yilia</span><br></pre></td></tr></table></figure>
+
+<p>更改配置文件_config.yml<br><img src="/image/step4.jpg" alt="avatar"></p>
+<p>7、部署</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ haxo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ haxo g // hexo generate 生成静态文件</span><br><span class="line">$ haxo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
+
+<p>8、刷新访问 ok</p>
+<p><a href="https://anywayshe.github.io/#" target="_blank" rel="noopener">https://anywayshe.github.io/#</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/08/GitHub+Hexo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -153,13 +244,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/08/hello-world/">Hello World</a>
+      <a class="article-title" href="/2017/07/08/hello-world/">Hello World</a>
     </h1>
   
 
         
-        <a href="/2019/07/08/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-08T06:59:42.835Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
+        <a href="/2017/07/08/hello-world/" class="archive-article-date">
+  	<time datetime="2017-07-08T08:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
 </a>
         
       </header>
@@ -191,7 +282,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/08/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/08/hello-world/">展开全文 >></a>
         </p>
       
 
