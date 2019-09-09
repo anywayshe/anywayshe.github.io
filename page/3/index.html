@@ -132,6 +132,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react-quill" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/12/react-quill/">react-quill</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/12/react-quill/" class="archive-article-date">
+  	<time datetime="2019-07-12T07:49:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://quilljs.com/docs/modules/toolbar/" target="_blank" rel="noopener">参考文档</a></p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-quill --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建富文本组件"><a href="#新建富文本组件" class="headerlink" title="新建富文本组件"></a>新建富文本组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123; connect &#125; from &apos;dva&apos;;</span><br><span class="line">import ReactQuill from &apos;react-quill&apos;;</span><br><span class="line">import &apos;react-quill/dist/quill.snow.css&apos;;</span><br><span class="line">import &#123; Modal, message, Button &#125; from &apos;antd&apos;;</span><br><span class="line"></span><br><span class="line">const toolbarOptions = [</span><br><span class="line">  [&apos;bold&apos;, &apos;italic&apos;, &apos;underline&apos;, &apos;strike&apos;], // toggled buttons</span><br><span class="line">  [&apos;blockquote&apos;, &apos;code-block&apos;],</span><br><span class="line"></span><br><span class="line">  [&#123; header: 1 &#125;, &#123; header: 2 &#125;], // custom button values</span><br><span class="line">  [&#123; list: &apos;ordered&apos; &#125;, &#123; list: &apos;bullet&apos; &#125;],</span><br><span class="line">  [&#123; script: &apos;sub&apos; &#125;, &#123; script: &apos;super&apos; &#125;], // superscript/subscript</span><br><span class="line">  [&#123; indent: &apos;-1&apos; &#125;, &#123; indent: &apos;+1&apos; &#125;], // outdent/indent</span><br><span class="line">  [&#123; direction: &apos;rtl&apos; &#125;], // text direction</span><br><span class="line"></span><br><span class="line">  [&#123; size: [&apos;small&apos;, false, &apos;large&apos;, &apos;huge&apos;] &#125;], // custom dropdown</span><br><span class="line">  [&#123; header: [1, 2, 3, 4, 5, 6, false] &#125;],</span><br><span class="line"></span><br><span class="line">  [&#123; color: [] &#125;, &#123; background: [] &#125;], // dropdown with defaults from theme</span><br><span class="line">  [&#123; font: [] &#125;],</span><br><span class="line">  [&#123; align: [] &#125;],</span><br><span class="line">  [&apos;link&apos;, &apos;image&apos;, &apos;video&apos;],</span><br><span class="line">  [&apos;clean&apos;], // remove formatting button</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/07/12/react-quill/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/12/react-quill/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue-quill-editor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -180,164 +259,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/12/vue-quill-editor/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网络协议模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/11/网络协议模型/">网络协议模型</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/11/网络协议模型/" class="archive-article-date">
-  	<time datetime="2018-07-11T02:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OSI 是 Open System Interconnect 的 缩写，意为开放式系统互联。</p>
-<table>
-<thead>
-<tr>
-<th align="left">OSI 中的层</th>
-<th align="left">功能</th>
-<th align="left">TCP/IP 协议族</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">应用层</td>
-<td align="left">文件传输，电子邮件，文件服务，虚拟终端</td>
-<td align="left">TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet 等</td>
-</tr>
-<tr>
-<td align="left">表示层</td>
-<td align="left">数据格式化，代码转换，数据加密</td>
-<td align="left">无协议</td>
-</tr>
-<tr>
-<td align="left">会话层</td>
-<td align="left">解除或建立与别的接点的联系</td>
-<td align="left">无协议</td>
-</tr>
-<tr>
-<td align="left">传输层</td>
-<td align="left">提供端对端的接口</td>
-<td align="left">TCP，UDP</td>
-</tr>
-<tr>
-<td align="left">网络层</td>
-<td align="left">为数据包选择路由</td>
-<td align="left">IP，ICMP，OSPF，EIGRP，IGMP</td>
-</tr>
-<tr>
-<td align="left">数据链路层</td>
-<td align="left">传输有地址的帧以及错误检测功能</td>
-<td align="left">SLIP，CSLIP，PPP，MTU</td>
-</tr>
-<tr>
-<td align="left">物理层</td>
-<td align="left">以二进制数据形式在物理媒体上传输数据</td>
-<td align="left">ISO2110，IEEE802，IEEE802.2</td>
-</tr>
-</tbody></table>
-<p>OSI 七层协体系 与 TCP/IP 四层体系对比</p>
-<table>
-  <tr>
-    <th>OSI 七层网络模型</th>
-    <th>TCP/IP 四层概念模型</th>
-    <th>对应网络协议</th>
-  </tr>
-  <tr>
-    <td>应用层（Application）</td>
-    <td rowspan="3">应用层</td>
-    <td>HTTP、TFTP, FTP, NFS, WAIS、SMTP</td>
-  </tr>
-  <tr>
-    <td>表示层（Presentation）</td>
-    <td>Telnet, Rlogin, SNMP, Gopher</td>
-  </tr>
-  <tr>
-    <td>会话层（Session）</td>
-    <td>SMTP, DNS</td>
-  </tr>
-  <tr>
-    <td>传输层（Transport）</td>
-    <td>传输层</td>
-    <td>TCP, UDP</td>
-  </tr>
-  <tr>
-    <td>网络层（Network）</td>
-    <td>网络层</td>
-    <td>IP, ICMP, ARP, RARP, AKP, UUCP</td>
-  </tr>
-  <tr>
-    <td>数据链路层（Data Link）</td>
-    <td rowspan="2">数据链路层</td>
-    <td>FDDI, Ethernet, Arpanet, PDN, SLIP, PPP</td>
-  </tr>
-  <tr>
-    <td>物理层（Physical）</td>
-    <td>IEEE 802.1A, IEEE 802.2 到 IEEE 802.11</td>
-  </tr>
-</table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">TCP/IP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/11/网络协议模型/">展开全文 >></a>
         </p>
       
 
@@ -460,11 +381,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
