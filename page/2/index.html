@@ -132,38 +132,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-env" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ali-oss" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/03/env/">env</a>
+      <a class="article-title" href="/2019/11/03/ali-oss/">ali-oss</a>
     </h1>
   
 
         
-        <a href="/2019/09/03/env/" class="archive-article-date">
-  	<time datetime="2019-09-03T02:54:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
+        <a href="/2019/11/03/ali-oss/" class="archive-article-date">
+  	<time datetime="2019-11-03T12:10:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先根目录下创建.</p>
-<p>.env 文件</p>
-<p>或者</p>
-<p>.env.production 文件（生产环境）</p>
-<p>.env.development 文件（开发环境）</p>
-<p>变量命名格式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// VUE_APP_是规定的命名格式，NAME是自定义的名</span><br><span class="line">VUE_APP_NAME = &apos;&apos;</span><br></pre></td></tr></table></figure>
-
-<p>获取变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process.env.VUE_APP_NAME</span><br></pre></td></tr></table></figure>
-
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">import OSS from &apos;ali-oss&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  message,</span><br><span class="line">&#125; from &apos;antd&apos;;</span><br><span class="line"></span><br><span class="line">const region = &apos;oss-cn-shanghai&apos;; // oss服务区域名称</span><br><span class="line"></span><br><span class="line">const testInfo = &#123;</span><br><span class="line">  bucket = &apos;xxx&apos;;</span><br><span class="line">  accessKeyId = &apos;xxx&apos;;</span><br><span class="line">  accessKeySecret = &apos;xxx&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const prdInfo = &#123;</span><br><span class="line">  bucket = &apos;xxx&apos;;</span><br><span class="line">  accessKeyId = &apos;xxx&apos;;</span><br><span class="line">  accessKeySecret = &apos;xxx&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const &#123; bucket, accessKeyId, accessKeySecret &#125; = test ? testInfo : prdInfo;</span><br><span class="line"></span><br><span class="line">// 直传OSS  &lt;=5GB</span><br><span class="line">const client = new OSS(&#123;</span><br><span class="line">  region,</span><br><span class="line">  endpoint: &apos;oss-cn-hzfinance.aliyuncs.com&apos;,</span><br><span class="line">  bucket,</span><br><span class="line">  accessKeyId,</span><br><span class="line">  accessKeySecret,</span><br><span class="line">  timeout: 60 * 60 * 1000,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const pathName = (file) =&gt; &#123;</span><br><span class="line">  const name = file.name.substring(file.name.lastIndexOf(&apos;.&apos;) + 1).toLowerCase();</span><br><span class="line">  return `/plutoTemp/zhs/$&#123;new Date().getTime()&#125;.$&#123;name&#125;`;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let checkpoint;</span><br><span class="line">// 大文件分片</span><br><span class="line">async function multipartUpload(file, callback, reject) &#123;</span><br><span class="line">  const name = pathName(file);</span><br><span class="line">  try &#123;</span><br><span class="line">    const result = await client.multipartUpload(name, file, &#123;</span><br><span class="line">      checkpoint,</span><br><span class="line">      mime: &apos;application/octet-stream&apos;,</span><br><span class="line">      async progress(i, cpt) &#123;</span><br><span class="line">        checkpoint = cpt;</span><br><span class="line">        callback &amp;&amp; callback(i);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">    const head = await client.head(name);</span><br><span class="line">    checkpoint = &apos;&apos;;</span><br><span class="line">    const &#123;</span><br><span class="line">      res,</span><br><span class="line">    &#125; = head;</span><br><span class="line">    return res;</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    // 取消</span><br><span class="line">    if (e.name === &apos;cancel&apos;) &#123;</span><br><span class="line">      message.info(&apos;取消上传&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 捕获超时异常。</span><br><span class="line">    if (e.code === &apos;ConnectionTimeoutError&apos;) &#123;</span><br><span class="line">      message.error(&apos;上传超时&apos;);</span><br><span class="line">      // do ConnectionTimeoutError operation</span><br><span class="line">    &#125;</span><br><span class="line">    reject(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 小文件put</span><br><span class="line">export const UploadMiniFile = (file, callback) =&gt; &#123;</span><br><span class="line">  const name = pathName(file);</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    client</span><br><span class="line">      .put(name, file, &#123;</span><br><span class="line">        progress(percentage) &#123;</span><br><span class="line">          callback &amp;&amp; callback(percentage);</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;)</span><br><span class="line">      .then((response) =&gt; &#123;</span><br><span class="line">        const &#123;</span><br><span class="line">          res,</span><br><span class="line">        &#125; = response;</span><br><span class="line">        resolve(res);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch((e) =&gt; &#123;</span><br><span class="line">        reject(e);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export const uploadOSS = (file, callback) =&gt; &#123;</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    resolve(multipartUpload(file, callback, reject));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export const cancelOSS = () =&gt; &#123;</span><br><span class="line">  client.cancel();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -171,11 +160,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">oss</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/03/env/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/03/ali-oss/">展开全文 >></a>
         </p>
       
 
@@ -205,28 +205,42 @@
 
 
   
-    <article id="post-element-cascader" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue使用-attrs与-listeners实现多层嵌套传递" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/element-cascader/">element-cascader</a>
+      <a class="article-title" href="/2019/10/24/Vue使用-attrs与-listeners实现多层嵌套传递/">Vue使用$attrs与$listeners实现多层嵌套传递</a>
     </h1>
   
 
         
-        <a href="/2019/08/14/element-cascader/" class="archive-article-date">
-  	<time datetime="2019-08-14T08:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+        <a href="/2019/10/24/Vue使用-attrs与-listeners实现多层嵌套传递/" class="archive-article-date">
+  	<time datetime="2019-10-24T08:40:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="吐槽一下级联菜单"><a href="#吐槽一下级联菜单" class="headerlink" title="吐槽一下级联菜单"></a>吐槽一下级联菜单</h3><p>单选任一选项 change-on-select<br>父子不关联 checkStrictly: true<br>只展示最后一级 show-all-levels</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-cascader</span><br><span class="line">    placeholder=&quot;请选择&quot;</span><br><span class="line">    ref=&quot;cascader&quot;</span><br><span class="line">    :options=&quot;options&quot;</span><br><span class="line">    :props=&quot;&#123; checkStrictly: true &#125;&quot;</span><br><span class="line">    clearable</span><br><span class="line">    change-on-select</span><br><span class="line">    @change=&quot;cascaderChange&quot;</span><br><span class="line">    style=&quot;width:100%&quot;</span><br><span class="line">    :show-all-levels=&quot;false&quot;</span><br><span class="line">  &gt;&lt;/el-cascader&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default()&#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        options: [</span><br><span class="line">          &#123;</span><br><span class="line">            value: &apos;zhinan&apos;,</span><br><span class="line">            label: &apos;指南&apos;,</span><br><span class="line">            children: [&#123;</span><br><span class="line">              value: &apos;shejiyuanze&apos;,</span><br><span class="line">              label: &apos;设计原则&apos;,</span><br><span class="line">              children: [&#123;</span><br><span class="line">                value: &apos;yizhi&apos;,</span><br><span class="line">                label: &apos;一致&apos;</span><br><span class="line">              &#125;, &#123;</span><br><span class="line">                value: &apos;fankui&apos;,</span><br><span class="line">                label: &apos;反馈&apos;</span><br><span class="line">              &#125;, &#123;</span><br><span class="line">                value: &apos;xiaolv&apos;,</span><br><span class="line">                label: &apos;效率&apos;</span><br><span class="line">              &#125;, &#123;</span><br><span class="line">                value: &apos;kekong&apos;,</span><br><span class="line">                label: &apos;可控&apos;</span><br><span class="line">              &#125;]</span><br><span class="line">            &#125;, &#123;</span><br><span class="line">              value: &apos;daohang&apos;,</span><br><span class="line">              label: &apos;导航&apos;,</span><br><span class="line">              children: [&#123;</span><br><span class="line">                value: &apos;cexiangdaohang&apos;,</span><br><span class="line">                label: &apos;侧向导航&apos;</span><br><span class="line">              &#125;, &#123;</span><br><span class="line">                value: &apos;dingbudaohang&apos;,</span><br><span class="line">                label: &apos;顶部导航&apos;</span><br><span class="line">              &#125;]</span><br><span class="line">            &#125;]</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      cascaderChange(val) &#123;</span><br><span class="line">        console.log(val[val.length-1])</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <p>现有 3 个嵌套组件，A-&gt;B，B-&gt;C。 现在我么需要在 A 中对 C 的 props 赋值，监听 C 的 emit 事件<br>A 组件与 C 组件通信，我们有多少种解决方案？</p>
+<p>1、我们使用 vuex 来进行数据管理，依赖于 vuex 我们可以一次改变，任何一个组件中都能获取。但是如果多个组件共享状态比较少，使用 vuex 过于麻烦和难以维护。element-ui 中大量采用此方法。<br>2、自定义 vue bus 事件总线，原理类似 vuex，使用特别简单。bus 适合碰到组件跨级兄弟组件等无明显依赖关系的消息传递，原生 app 开发中经常用到，但是缺点是 bus 破坏了代码的链式调用，大量的滥用将导致逻辑的分散，出现问题后很难定位，降低了代码可读性。<br>3、使用 B 来做中转，A 传递给 B，B 再给 C<strong>，</strong>这是最容易想到的方案，但是如果嵌套的组件过多，需要传递的事件和属性较多，会导致代码繁琐，代码维护困难。</p>
+<p>对于我们这种情况，3 种方式都有局限性<br>在 vue2.4 中，为了解决该需求，引入了$attrs和$listeners，新增了 inheritAttrs 选项。我们只需要在 B 组件中对引入的 C 组件增加下面两个属性即可绑定所有的属性和事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;C v-bind=&quot;$attrs&quot; v-on=&quot;$listeners&quot;&gt;&lt;/C&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;h2&gt;组件A 数据项:&#123;&#123;myData&#125;&#125;&lt;/h2&gt;</span><br><span class="line">  &lt;B @changeMyData=&quot;changeMyData&quot; :myData=&quot;myData&quot;&gt;&lt;/B&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import B from &quot;./B&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      myData: &quot;100&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123; B &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeMyData(val) &#123;</span><br><span class="line">      this.myData = val;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h3&gt;组件B&lt;/h3&gt;</span><br><span class="line">    &lt;C v-bind=&quot;$attrs&quot; v-on=&quot;$listeners&quot;&gt;&lt;/C&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import C from &quot;./C&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123; C &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h5&gt;组件C&lt;/h5&gt;</span><br><span class="line">    &lt;input v-model=&quot;myc&quot; @input=&quot;hInput&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123; myData: &#123; String &#125; &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.myc = this.myData;  // 在组件A中传递过来的属性</span><br><span class="line">    console.info(this.$attrs, this.$listeners);</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    hInput() &#123;</span><br><span class="line">      this.$emit(&quot;changeMyData&quot;, this.myc); // // 在组件A中传递过来的事件</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>element-ui 开发的后台项目中，大量使用到了 el-table 和 el-pagination 做分页数据展示，所以我封装一个自定义组件 page-table</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;page-table&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;el-table</span><br><span class="line">          ref=&quot;elTable&quot;</span><br><span class="line">          :data=&quot;tableData&quot;&gt;</span><br><span class="line">        &lt;slot/&gt;</span><br><span class="line">      &lt;/el-table&gt;</span><br><span class="line">      &lt;div style=&quot;margin-top: 16px;overflow: hidden&quot;&gt;</span><br><span class="line">        &lt;el-pagination</span><br><span class="line">            class=&quot;page&quot;</span><br><span class="line">            :current-page=&quot;currentPage&quot;</span><br><span class="line">            layout=&quot;total, prev, pager, next, jumper&quot;</span><br><span class="line">            :total=&quot;total&quot;</span><br><span class="line">            @current-change=&quot;handleCurrentChange&quot;/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是这样做的副作用是引用 page-table 的地方无法使用 el-table 和属性和事件。我们在 page-table 中把所有 el-table 的属性和事件都中转一遍？有上百个呢。<br>只需在 el-table 使用的地方加上 v-on=”$listeners”和v-bind=”$attrs”即可，使用 page-table 的地方即可使用所有 el-table 的属性和事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;page-table&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;el-table</span><br><span class="line">          ref=&quot;elTable&quot;</span><br><span class="line">          v-bind=&quot;$attrs&quot;</span><br><span class="line">          v-on=&quot;$listeners&quot;</span><br><span class="line">          :data=&quot;tableData&quot;&gt;</span><br><span class="line">        &lt;slot/&gt;</span><br><span class="line">      &lt;/el-table&gt;</span><br><span class="line">      &lt;div style=&quot;margin-top: 16px;overflow: hidden&quot;&gt;</span><br><span class="line">        &lt;el-pagination</span><br><span class="line">            class=&quot;page&quot;</span><br><span class="line">            :current-page=&quot;currentPage&quot;</span><br><span class="line">            layout=&quot;total, prev, pager, next, jumper&quot;</span><br><span class="line">            :total=&quot;total&quot;</span><br><span class="line">            @current-change=&quot;handleCurrentChange&quot;/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -240,7 +254,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/14/element-cascader/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/10/24/Vue使用-attrs与-listeners实现多层嵌套传递/">展开全文 >></a>
         </p>
       
 
@@ -272,7 +286,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -359,6 +373,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -367,15 +385,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">oss</a>
               </li>
             
             <div class="clearfix"></div>

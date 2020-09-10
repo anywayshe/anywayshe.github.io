@@ -132,56 +132,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-GitHub+Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-react-quill" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/08/GitHub+Hexo/">GitHub+Hexo 搭建个人网站</a>
+      <a class="article-title" href="/2019/07/12/react-quill/">react-quill</a>
     </h1>
   
 
         
-        <a href="/2018/07/08/GitHub+Hexo/" class="archive-article-date">
-  	<time datetime="2018-07-08T08:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
+        <a href="/2019/07/12/react-quill/" class="archive-article-date">
+  	<time datetime="2019-07-12T07:49:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+        <p><a href="https://quilljs.com/docs/modules/toolbar/" target="_blank" rel="noopener">参考文档</a></p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-quill --save</span><br></pre></td></tr></table></figure>
 
-<p>新建项目并启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm i</span><br><span class="line">$ hexo new <span class="string">"我的第一篇博客"</span> // 新建markdown文件(<span class="built_in">source</span>文件夹中的_post文件夹下)，编辑保存</span><br><span class="line">$ hexo s // hexo server 预览 本地访问localhost:4000</span><br></pre></td></tr></table></figure>
-
-<h2 id="关联-github"><a href="#关联-github" class="headerlink" title="关联 github"></a>关联 github</h2><p>1、新建 GitHub 项目，命名 username.github.io, username 为你 Github 的用户名，如 anywayshe.github.io<br>注：<font color="#FFD700">github 创建静态博客只能按照命名规则，且只有一个</font></p>
-<hr>
-<p>创建成功项目地址：<a href="https://github.com/anywayshe/anywayshe.github.io.git" target="_blank" rel="noopener">https://github.com/anywayshe/anywayshe.github.io.git</a></p>
-<p>2、安装 git 部署插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>3、添加配置 _config.yml</p>
-<p><img src="/image/step3.jpg" alt="avatar"></p>
-<p>4、依次输入命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ hexo g // hexo generate 生成静态文件</span><br><span class="line">$ hexo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
-
-<p>5、访问网站</p>
-<p>可以先刷新你的 github 仓库，看到本地代码已上传</p>
-<p><a href="https://anywayshe.github.io/#" target="_blank" rel="noopener">https://anywayshe.github.io/#</a> // 新建项目的名字，有延迟，多刷几遍</p>
-<p>6、切换主题</p>
-<p>以 yilia 为例</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia // 克隆到themes文件夹，名为yilia</span><br></pre></td></tr></table></figure>
-
-<p>更改配置文件_config.yml<br><img src="/image/step4.jpg" alt="avatar"></p>
-<p>7、部署</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ hexo g // hexo generate 生成静态文件</span><br><span class="line">$ hexo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
-
-<p>8、刷新访问 ok</p>
-<p><a href="https://anywayshe.github.io/#" target="_blank" rel="noopener">https://anywayshe.github.io/#</a></p>
-
+<h3 id="新建富文本组件"><a href="#新建富文本组件" class="headerlink" title="新建富文本组件"></a>新建富文本组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123; connect &#125; from &apos;dva&apos;;</span><br><span class="line">import ReactQuill from &apos;react-quill&apos;;</span><br><span class="line">import &apos;react-quill/dist/quill.snow.css&apos;;</span><br><span class="line">import &#123; Modal, message, Button &#125; from &apos;antd&apos;;</span><br><span class="line"></span><br><span class="line">const toolbarOptions = [</span><br><span class="line">  [&apos;bold&apos;, &apos;italic&apos;, &apos;underline&apos;, &apos;strike&apos;], // toggled buttons</span><br><span class="line">  [&apos;blockquote&apos;, &apos;code-block&apos;],</span><br><span class="line"></span><br><span class="line">  [&#123; header: 1 &#125;, &#123; header: 2 &#125;], // custom button values</span><br><span class="line">  [&#123; list: &apos;ordered&apos; &#125;, &#123; list: &apos;bullet&apos; &#125;],</span><br><span class="line">  [&#123; script: &apos;sub&apos; &#125;, &#123; script: &apos;super&apos; &#125;], // superscript/subscript</span><br><span class="line">  [&#123; indent: &apos;-1&apos; &#125;, &#123; indent: &apos;+1&apos; &#125;], // outdent/indent</span><br><span class="line">  [&#123; direction: &apos;rtl&apos; &#125;], // text direction</span><br><span class="line"></span><br><span class="line">  [&#123; size: [&apos;small&apos;, false, &apos;large&apos;, &apos;huge&apos;] &#125;], // custom dropdown</span><br><span class="line">  [&#123; header: [1, 2, 3, 4, 5, 6, false] &#125;],</span><br><span class="line"></span><br><span class="line">  [&#123; color: [] &#125;, &#123; background: [] &#125;], // dropdown with defaults from theme</span><br><span class="line">  [&#123; font: [] &#125;],</span><br><span class="line">  [&#123; align: [] &#125;],</span><br><span class="line">  [&apos;link&apos;, &apos;image&apos;, &apos;video&apos;],</span><br><span class="line">  [&apos;clean&apos;], // remove formatting button</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/07/12/react-quill/#more">more >></a>
+        
       
 
       
@@ -189,11 +166,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/08/GitHub+Hexo/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/12/react-quill/">展开全文 >></a>
         </p>
       
 
@@ -223,39 +211,30 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue-quill-editor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/07/12/vue-quill-editor/">vue-quill-editor + vue-quill-editor-upload</a>
     </h1>
   
 
         
-        <a href="/2017/07/08/hello-world/" class="archive-article-date">
-  	<time datetime="2017-07-08T08:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+        <a href="/2019/07/12/vue-quill-editor/" class="archive-article-date">
+  	<time datetime="2019-07-12T06:56:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-quill-editor --save // 富文本编辑器</span><br><span class="line">npm install vue-quill-editor-upload --save // 图片上传服务器</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="components-文件夹下新建组件-Editor-vue"><a href="#components-文件夹下新建组件-Editor-vue" class="headerlink" title="components 文件夹下新建组件 Editor.vue"></a>components 文件夹下新建组件 Editor.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;quill-editor</span><br><span class="line">      ref=&quot;myTextEditor&quot;</span><br><span class="line">      v-model=&quot;content&quot;</span><br><span class="line">      :options=&quot;editorOption&quot;</span><br><span class="line">      @change=&quot;onEditorChange($event)&quot;</span><br><span class="line">    &gt;&lt;/quill-editor&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import &quot;quill/dist/quill.core.css&quot;;</span><br><span class="line">  import &quot;quill/dist/quill.snow.css&quot;;</span><br><span class="line">  import &quot;quill/dist/quill.bubble.css&quot;;</span><br><span class="line">  import &#123; quillEditor &#125; from &quot;vue-quill-editor&quot;; //调用编辑器</span><br><span class="line">  import &#123; quillRedefine &#125; from &quot;vue-quill-editor-upload&quot;;</span><br><span class="line">  export default &#123;</span><br><span class="line">    name: &quot;QuillEditor&quot;,</span><br><span class="line">    components: &#123;</span><br><span class="line">      quillEditor,</span><br><span class="line">      quillRedefine</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        content: &quot;&quot;,</span><br><span class="line">        editorOption: &#123;&#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">      editor() &#123;</span><br><span class="line">        return this.$refs.myTextEditor.quillEditor;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">      this.editorOption = quillRedefine(&#123;</span><br><span class="line">        // 图片上传的设置 更多参数请参考https://www.npmjs.com/package/vue-quill-editor-upload</span><br><span class="line">        uploadConfig: &#123;</span><br><span class="line">          name: &quot;files&quot;, // 可选参数 文件的参数名 默认为img</span><br><span class="line">          action: `/oss/uploadFiles`, // *必填参数 图片上传地址</span><br><span class="line">          // *必选参数  res是一个函数，函数接收的response为上传成功时服务器返回的数据</span><br><span class="line">          res: respnse =&gt; &#123;</span><br><span class="line">            return respnse.data[0]; // return回你的图片地址</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      onEditorChange(editor) &#123;</span><br><span class="line">        // 向父组件传值富文本</span><br><span class="line">        console.log(editor)</span><br><span class="line">        // this.$emit(&quot;sendValue&quot;, this.content);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
 
@@ -264,11 +243,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/08/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/12/vue-quill-editor/">展开全文 >></a>
         </p>
       
 
@@ -300,7 +290,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 
@@ -387,6 +377,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -395,15 +389,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">oss</a>
               </li>
             
             <div class="clearfix"></div>

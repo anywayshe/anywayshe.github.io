@@ -132,70 +132,39 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-interview" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/17/git/">git</a>
+      <a class="article-title" href="/2019/10/23/interview/">interview</a>
     </h1>
   
 
         
-        <a href="/2019/07/17/git/" class="archive-article-date">
-  	<time datetime="2019-07-17T06:12:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+        <a href="/2019/10/23/interview/" class="archive-article-date">
+  	<time datetime="2019-10-23T07:47:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>分支操作</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git branch // 查看本地所有分支</span><br><span class="line">git branch -r // 查看远程所有分支</span><br><span class="line">git branch develop // 创建develop分支</span><br><span class="line">git checkout -b develop // 创建develop分支并切换</span><br><span class="line">git branch -D develop // 删除本地develop分支</span><br><span class="line">git branch -r -d origin/develop  git push origin :develop // 两条命令删除远程develop分支</span><br><span class="line">git merge develop // 将develop分支代码合并到当前分支</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>撤销操作</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout README.md // 撤回本地单个文件README.md的修改</span><br><span class="line">git checkout . // 撤回本地所有文件的修改</span><br><span class="line"></span><br><span class="line">git reset HEAD . // 撤销git add . 操作</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>暂存操作</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git stash // 保存当前工作进度</span><br><span class="line">git stash list // 查看保存进度列表</span><br><span class="line">git stash pop // 恢复最新的进度到工作区并删除该暂存记录</span><br><span class="line">git stash pop --index // 恢复最新的进度到工作区和暂存区</span><br><span class="line">git stash pop stash@&#123;0&#125; // 恢复指定的进度到工作区</span><br><span class="line">git stash clear // 删除所有存储的进度</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>版本回退</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard xxx</span><br><span class="line">或</span><br><span class="line">git reset --hard HEAD^ // 本地仓库回退</span><br><span class="line"></span><br><span class="line">git push origin HEAD --force</span><br><span class="line">或</span><br><span class="line">git push --force // 提交至远程仓库回退</span><br></pre></td></tr></table></figure>
-
-<p>回退某个文件</p>
-<ul>
-<li>查看文件版本号 commit id</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log &lt;file path&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>回退到某个版本(file path 可以是文件/文件夹/或使用通配符)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;commit id&gt; &lt;file path&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看变基</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git lg</span><br><span class="line">或</span><br><span class="line">git log --oneline --graph</span><br><span class="line">或</span><br><span class="line">git log --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>规范变基</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>强制更新<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard origin/dev</span><br></pre></td></tr></table></figure></li>
-</ul>
+        <p>vue 数据更新</p>
+<p>1、watch 和 computed</p>
+<p>watch 注意 deep(深度监听) 和 immediate(立即监听)</p>
+<p>2、this.$set</p>
+<p>触发视图更新</p>
+<p>3、this.$nextTick</p>
+<p>4、props、$parent、$children</p>
+<p>5、this.$attrs</p>
+<p>当一个组件没有声明 prop 时，可以通过 v-bind=’$attrs’获取所有父作用域的绑定( class 和 style 除外)</p>
+<p>6、this.$listeners</p>
+<p>包含了父作用域中(不含.native 修饰器)的 v-on 事件监听器</p>
+<p>7、$emit 和 $on</p>
+<p>8、vuex</p>
 
       
 
@@ -204,22 +173,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/17/git/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/10/23/interview/">展开全文 >></a>
         </p>
       
 
@@ -249,35 +207,38 @@
 
 
   
-    <article id="post-vue-admin-template" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-env" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/16/vue-admin-template/">vue-admin-template动态路由</a>
+      <a class="article-title" href="/2019/09/03/env/">env</a>
     </h1>
   
 
         
-        <a href="/2019/07/16/vue-admin-template/" class="archive-article-date">
-  	<time datetime="2019-07-16T07:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+        <a href="/2019/09/03/env/" class="archive-article-date">
+  	<time datetime="2019-09-03T02:54:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基于 vue-admin-template 项目基础上，对不同角色进行路由菜单权限设置，后台动态返回菜单</p>
-<h3 id="Build-Setup"><a href="#Build-Setup" class="headerlink" title="Build Setup"></a>Build Setup</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># clone the project</span><br><span class="line">git clone https://github.com/PanJiaChen/vue-admin-template.git</span><br><span class="line"></span><br><span class="line"># enter the project directory</span><br><span class="line">cd vue-admin-template</span><br><span class="line"></span><br><span class="line"># install dependency</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"># develop</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+        <p>首先根目录下创建.</p>
+<p>.env 文件</p>
+<p>或者</p>
+<p>.env.production 文件（生产环境）</p>
+<p>.env.development 文件（开发环境）</p>
+<p>变量命名格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// VUE_APP_是规定的命名格式，NAME是自定义的名</span><br><span class="line">VUE_APP_NAME = &apos;&apos;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># build for test environment</span><br><span class="line">npm run build:stage</span><br><span class="line"></span><br><span class="line"># build for production environment</span><br><span class="line">npm run build:prod</span><br></pre></td></tr></table></figure>
+<p>获取变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process.env.VUE_APP_NAME</span><br></pre></td></tr></table></figure>
 
-<p>编辑 router.js<br>拆分公用路由和动态路由<br>动态路由的区别就在于定义菜单的 permissions，比对后台返回 menuCode，匹配显示</p>
-        
-          <a class="article-more-a" href="/2019/07/16/vue-admin-template/#more">more >></a>
-        
+
       
 
       
@@ -285,22 +246,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/16/vue-admin-template/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/03/env/">展开全文 >></a>
         </p>
       
 
@@ -332,7 +282,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -419,6 +369,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -427,15 +381,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">oss</a>
               </li>
             
             <div class="clearfix"></div>
