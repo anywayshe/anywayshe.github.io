@@ -132,33 +132,71 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-react-quill" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/react-quill/">react-quill</a>
+      <a class="article-title" href="/2019/07/17/git/">git</a>
     </h1>
   
 
         
-        <a href="/2019/07/12/react-quill/" class="archive-article-date">
-  	<time datetime="2019-07-12T07:49:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+        <a href="/2019/07/17/git/" class="archive-article-date">
+  	<time datetime="2019-07-17T06:12:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://quilljs.com/docs/modules/toolbar/" target="_blank" rel="noopener">参考文档</a></p>
-<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-quill --save</span><br></pre></td></tr></table></figure>
+        <ul>
+<li>分支操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git branch // 查看本地所有分支</span><br><span class="line">git branch -r // 查看远程所有分支</span><br><span class="line">git branch develop // 创建develop分支</span><br><span class="line">git checkout -b develop // 创建develop分支并切换</span><br><span class="line">git branch -D develop // 删除本地develop分支</span><br><span class="line">git branch -r -d origin/develop  git push origin :develop // 两条命令删除远程develop分支</span><br><span class="line">git merge develop // 将develop分支代码合并到当前分支</span><br></pre></td></tr></table></figure>
 
-<h3 id="新建富文本组件"><a href="#新建富文本组件" class="headerlink" title="新建富文本组件"></a>新建富文本组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import &#123; connect &#125; from &apos;dva&apos;;</span><br><span class="line">import ReactQuill from &apos;react-quill&apos;;</span><br><span class="line">import &apos;react-quill/dist/quill.snow.css&apos;;</span><br><span class="line">import &#123; Modal, message, Button &#125; from &apos;antd&apos;;</span><br><span class="line"></span><br><span class="line">const toolbarOptions = [</span><br><span class="line">  [&apos;bold&apos;, &apos;italic&apos;, &apos;underline&apos;, &apos;strike&apos;], // toggled buttons</span><br><span class="line">  [&apos;blockquote&apos;, &apos;code-block&apos;],</span><br><span class="line"></span><br><span class="line">  [&#123; header: 1 &#125;, &#123; header: 2 &#125;], // custom button values</span><br><span class="line">  [&#123; list: &apos;ordered&apos; &#125;, &#123; list: &apos;bullet&apos; &#125;],</span><br><span class="line">  [&#123; script: &apos;sub&apos; &#125;, &#123; script: &apos;super&apos; &#125;], // superscript/subscript</span><br><span class="line">  [&#123; indent: &apos;-1&apos; &#125;, &#123; indent: &apos;+1&apos; &#125;], // outdent/indent</span><br><span class="line">  [&#123; direction: &apos;rtl&apos; &#125;], // text direction</span><br><span class="line"></span><br><span class="line">  [&#123; size: [&apos;small&apos;, false, &apos;large&apos;, &apos;huge&apos;] &#125;], // custom dropdown</span><br><span class="line">  [&#123; header: [1, 2, 3, 4, 5, 6, false] &#125;],</span><br><span class="line"></span><br><span class="line">  [&#123; color: [] &#125;, &#123; background: [] &#125;], // dropdown with defaults from theme</span><br><span class="line">  [&#123; font: [] &#125;],</span><br><span class="line">  [&#123; align: [] &#125;],</span><br><span class="line">  [&apos;link&apos;, &apos;image&apos;, &apos;video&apos;],</span><br><span class="line">  [&apos;clean&apos;], // remove formatting button</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/07/12/react-quill/#more">more >></a>
-        
+<ul>
+<li>撤销操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout README.md // 撤回本地单个文件README.md的修改</span><br><span class="line">git checkout . // 撤回本地所有文件的修改</span><br><span class="line"></span><br><span class="line">git reset HEAD . // 撤销git add . 操作</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>暂存操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git stash // 保存当前工作进度</span><br><span class="line">git stash list // 查看保存进度列表</span><br><span class="line">git stash pop // 恢复最新的进度到工作区并删除该暂存记录</span><br><span class="line">git stash pop --index // 恢复最新的进度到工作区和暂存区</span><br><span class="line">git stash pop stash@&#123;0&#125; // 恢复指定的进度到工作区</span><br><span class="line">git stash clear // 删除所有存储的进度</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>版本回退</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard xxx</span><br><span class="line">或</span><br><span class="line">git reset --hard HEAD^ // 本地仓库回退</span><br><span class="line"></span><br><span class="line">git push origin HEAD --force</span><br><span class="line">或</span><br><span class="line">git push --force // 提交至远程仓库回退</span><br></pre></td></tr></table></figure>
+
+<p>回退某个文件</p>
+<ul>
+<li>查看文件版本号 commit id</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log &lt;file path&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>回退到某个版本(file path 可以是文件/文件夹/或使用通配符)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;commit id&gt; &lt;file path&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看变基</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git lg</span><br><span class="line">或</span><br><span class="line">git log --oneline --graph</span><br><span class="line">或</span><br><span class="line">git log --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>规范变基</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>强制更新<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard origin/dev</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
 
       
@@ -171,7 +209,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -181,7 +219,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/12/react-quill/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/17/git/">展开全文 >></a>
         </p>
       
 
@@ -211,31 +249,35 @@
 
 
   
-    <article id="post-vue-quill-editor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue-admin-template" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/vue-quill-editor/">vue-quill-editor + vue-quill-editor-upload</a>
+      <a class="article-title" href="/2019/07/16/vue-admin-template/">vue-admin-template动态路由</a>
     </h1>
   
 
         
-        <a href="/2019/07/12/vue-quill-editor/" class="archive-article-date">
-  	<time datetime="2019-07-12T06:56:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+        <a href="/2019/07/16/vue-admin-template/" class="archive-article-date">
+  	<time datetime="2019-07-16T07:33:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-quill-editor --save // 富文本编辑器</span><br><span class="line">npm install vue-quill-editor-upload --save // 图片上传服务器</span><br></pre></td></tr></table></figure>
+        <p>基于 vue-admin-template 项目基础上，对不同角色进行路由菜单权限设置，后台动态返回菜单</p>
+<h3 id="Build-Setup"><a href="#Build-Setup" class="headerlink" title="Build Setup"></a>Build Setup</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># clone the project</span><br><span class="line">git clone https://github.com/PanJiaChen/vue-admin-template.git</span><br><span class="line"></span><br><span class="line"># enter the project directory</span><br><span class="line">cd vue-admin-template</span><br><span class="line"></span><br><span class="line"># install dependency</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"># develop</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
 
-<h3 id="components-文件夹下新建组件-Editor-vue"><a href="#components-文件夹下新建组件-Editor-vue" class="headerlink" title="components 文件夹下新建组件 Editor.vue"></a>components 文件夹下新建组件 Editor.vue</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;quill-editor</span><br><span class="line">      ref=&quot;myTextEditor&quot;</span><br><span class="line">      v-model=&quot;content&quot;</span><br><span class="line">      :options=&quot;editorOption&quot;</span><br><span class="line">      @change=&quot;onEditorChange($event)&quot;</span><br><span class="line">    &gt;&lt;/quill-editor&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import &quot;quill/dist/quill.core.css&quot;;</span><br><span class="line">  import &quot;quill/dist/quill.snow.css&quot;;</span><br><span class="line">  import &quot;quill/dist/quill.bubble.css&quot;;</span><br><span class="line">  import &#123; quillEditor &#125; from &quot;vue-quill-editor&quot;; //调用编辑器</span><br><span class="line">  import &#123; quillRedefine &#125; from &quot;vue-quill-editor-upload&quot;;</span><br><span class="line">  export default &#123;</span><br><span class="line">    name: &quot;QuillEditor&quot;,</span><br><span class="line">    components: &#123;</span><br><span class="line">      quillEditor,</span><br><span class="line">      quillRedefine</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        content: &quot;&quot;,</span><br><span class="line">        editorOption: &#123;&#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">      editor() &#123;</span><br><span class="line">        return this.$refs.myTextEditor.quillEditor;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">      this.editorOption = quillRedefine(&#123;</span><br><span class="line">        // 图片上传的设置 更多参数请参考https://www.npmjs.com/package/vue-quill-editor-upload</span><br><span class="line">        uploadConfig: &#123;</span><br><span class="line">          name: &quot;files&quot;, // 可选参数 文件的参数名 默认为img</span><br><span class="line">          action: `/oss/uploadFiles`, // *必填参数 图片上传地址</span><br><span class="line">          // *必选参数  res是一个函数，函数接收的response为上传成功时服务器返回的数据</span><br><span class="line">          res: respnse =&gt; &#123;</span><br><span class="line">            return respnse.data[0]; // return回你的图片地址</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      onEditorChange(editor) &#123;</span><br><span class="line">        // 向父组件传值富文本</span><br><span class="line">        console.log(editor)</span><br><span class="line">        // this.$emit(&quot;sendValue&quot;, this.content);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># build for test environment</span><br><span class="line">npm run build:stage</span><br><span class="line"></span><br><span class="line"># build for production environment</span><br><span class="line">npm run build:prod</span><br></pre></td></tr></table></figure>
 
-
+<p>编辑 router.js<br>拆分公用路由和动态路由<br>动态路由的区别就在于定义菜单的 permissions，比对后台返回 menuCode，匹配显示</p>
+        
+          <a class="article-more-a" href="/2019/07/16/vue-admin-template/#more">more >></a>
+        
       
 
       
@@ -258,7 +300,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/12/vue-quill-editor/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/16/vue-admin-template/">展开全文 >></a>
         </p>
       
 
@@ -290,7 +332,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -302,7 +344,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Shaw
+    		&copy; 2020 Shaw
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -377,6 +419,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
@@ -385,15 +435,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>

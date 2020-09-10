@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Vue使用$attrs与$listeners实现多层嵌套传递 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/5/index.html">
+  <meta name="description" content="现有 3 个嵌套组件，A-&amp;gt;B，B-&amp;gt;C。 现在我么需要在 A 中对 C 的 props 赋值，监听 C 的 emit 事件A 组件与 C 组件通信，我们有多少种解决方案？ 1、我们使用 vuex 来进行数据管理，依赖于 vuex 我们可以一次改变，任何一个组件中都能获取。但是如果多个组件共享状态比较少，使用 vuex 过于麻烦和难以维护。element-ui 中大量采用此方法。2、自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue使用$attrs与$listeners实现多层嵌套传递">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/Vue使用-attrs与-listeners实现多层嵌套传递/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="现有 3 个嵌套组件，A-&amp;gt;B，B-&amp;gt;C。 现在我么需要在 A 中对 C 的 props 赋值，监听 C 的 emit 事件A 组件与 C 组件通信，我们有多少种解决方案？ 1、我们使用 vuex 来进行数据管理，依赖于 vuex 我们可以一次改变，任何一个组件中都能获取。但是如果多个组件共享状态比较少，使用 vuex 过于麻烦和难以维护。element-ui 中大量采用此方法。2、自">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-24T08:42:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Vue使用$attrs与$listeners实现多层嵌套传递">
+<meta name="twitter:description" content="现有 3 个嵌套组件，A-&amp;gt;B，B-&amp;gt;C。 现在我么需要在 A 中对 C 的 props 赋值，监听 C 的 emit 事件A 组件与 C 组件通信，我们有多少种解决方案？ 1、我们使用 vuex 来进行数据管理，依赖于 vuex 我们可以一次改变，任何一个组件中都能获取。但是如果多个组件共享状态比较少，使用 vuex 过于麻烦和难以维护。element-ui 中大量采用此方法。2、自">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -130,101 +134,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue使用-attrs与-listeners实现多层嵌套传递" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/11/网络协议模型/" class="archive-article-date">
-  	<time datetime="2018-07-11T02:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/11/网络协议模型/">网络协议模型</a>
+    <h1 class="article-title" itemprop="name">
+      Vue使用$attrs与$listeners实现多层嵌套传递
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">TCP/IP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/Axios/" class="archive-article-date">
-  	<time datetime="2018-07-10T02:34:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
+        
+        <a href="/2019/10/24/Vue使用-attrs与-listeners实现多层嵌套传递/" class="archive-article-date">
+  	<time datetime="2019-10-24T08:40:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现有 3 个嵌套组件，A-&gt;B，B-&gt;C。 现在我么需要在 A 中对 C 的 props 赋值，监听 C 的 emit 事件<br>A 组件与 C 组件通信，我们有多少种解决方案？</p>
+<p>1、我们使用 vuex 来进行数据管理，依赖于 vuex 我们可以一次改变，任何一个组件中都能获取。但是如果多个组件共享状态比较少，使用 vuex 过于麻烦和难以维护。element-ui 中大量采用此方法。<br>2、自定义 vue bus 事件总线，原理类似 vuex，使用特别简单。bus 适合碰到组件跨级兄弟组件等无明显依赖关系的消息传递，原生 app 开发中经常用到，但是缺点是 bus 破坏了代码的链式调用，大量的滥用将导致逻辑的分散，出现问题后很难定位，降低了代码可读性。<br>3、使用 B 来做中转，A 传递给 B，B 再给 C<strong>，</strong>这是最容易想到的方案，但是如果嵌套的组件过多，需要传递的事件和属性较多，会导致代码繁琐，代码维护困难。</p>
+<p>对于我们这种情况，3 种方式都有局限性<br>在 vue2.4 中，为了解决该需求，引入了$attrs和$listeners，新增了 inheritAttrs 选项。我们只需要在 B 组件中对引入的 C 组件增加下面两个属性即可绑定所有的属性和事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;C v-bind=&quot;$attrs&quot; v-on=&quot;$listeners&quot;&gt;&lt;/C&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;h2&gt;组件A 数据项:&#123;&#123;myData&#125;&#125;&lt;/h2&gt;</span><br><span class="line">  &lt;B @changeMyData=&quot;changeMyData&quot; :myData=&quot;myData&quot;&gt;&lt;/B&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import B from &quot;./B&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      myData: &quot;100&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123; B &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeMyData(val) &#123;</span><br><span class="line">      this.myData = val;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h3&gt;组件B&lt;/h3&gt;</span><br><span class="line">    &lt;C v-bind=&quot;$attrs&quot; v-on=&quot;$listeners&quot;&gt;&lt;/C&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import C from &quot;./C&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123; C &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h5&gt;组件C&lt;/h5&gt;</span><br><span class="line">    &lt;input v-model=&quot;myc&quot; @input=&quot;hInput&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123; myData: &#123; String &#125; &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    this.myc = this.myData;  // 在组件A中传递过来的属性</span><br><span class="line">    console.info(this.$attrs, this.$listeners);</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    hInput() &#123;</span><br><span class="line">      this.$emit(&quot;changeMyData&quot;, this.myc); // // 在组件A中传递过来的事件</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>element-ui 开发的后台项目中，大量使用到了 el-table 和 el-pagination 做分页数据展示，所以我封装一个自定义组件 page-table</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;page-table&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;el-table</span><br><span class="line">          ref=&quot;elTable&quot;</span><br><span class="line">          :data=&quot;tableData&quot;&gt;</span><br><span class="line">        &lt;slot/&gt;</span><br><span class="line">      &lt;/el-table&gt;</span><br><span class="line">      &lt;div style=&quot;margin-top: 16px;overflow: hidden&quot;&gt;</span><br><span class="line">        &lt;el-pagination</span><br><span class="line">            class=&quot;page&quot;</span><br><span class="line">            :current-page=&quot;currentPage&quot;</span><br><span class="line">            layout=&quot;total, prev, pager, next, jumper&quot;</span><br><span class="line">            :total=&quot;total&quot;</span><br><span class="line">            @current-change=&quot;handleCurrentChange&quot;/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是这样做的副作用是引用 page-table 的地方无法使用 el-table 和属性和事件。我们在 page-table 中把所有 el-table 的属性和事件都中转一遍？有上百个呢。<br>只需在 el-table 使用的地方加上 v-on=”$listeners”和v-bind=”$attrs”即可，使用 page-table 的地方即可使用所有 el-table 的属性和事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;page-table&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">      &lt;el-table</span><br><span class="line">          ref=&quot;elTable&quot;</span><br><span class="line">          v-bind=&quot;$attrs&quot;</span><br><span class="line">          v-on=&quot;$listeners&quot;</span><br><span class="line">          :data=&quot;tableData&quot;&gt;</span><br><span class="line">        &lt;slot/&gt;</span><br><span class="line">      &lt;/el-table&gt;</span><br><span class="line">      &lt;div style=&quot;margin-top: 16px;overflow: hidden&quot;&gt;</span><br><span class="line">        &lt;el-pagination</span><br><span class="line">            class=&quot;page&quot;</span><br><span class="line">            :current-page=&quot;currentPage&quot;</span><br><span class="line">            layout=&quot;total, prev, pager, next, jumper&quot;</span><br><span class="line">            :total=&quot;total&quot;</span><br><span class="line">            @current-change=&quot;handleCurrentChange&quot;/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/Axios/">Axios封装</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/24/Vue使用-attrs与-listeners实现多层嵌套传递/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/23/interview/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">interview</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/6/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -248,8 +301,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

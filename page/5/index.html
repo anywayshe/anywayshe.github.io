@@ -132,55 +132,111 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-GitHub+Hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-网络协议模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/08/GitHub+Hexo/">GitHub+Hexo 搭建个人网站</a>
+      <a class="article-title" href="/2018/07/11/网络协议模型/">网络协议模型</a>
     </h1>
   
 
         
-        <a href="/2018/07/08/GitHub+Hexo/" class="archive-article-date">
-  	<time datetime="2018-07-08T08:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
+        <a href="/2018/07/11/网络协议模型/" class="archive-article-date">
+  	<time datetime="2018-07-11T02:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>新建项目并启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm i</span><br><span class="line">$ hexo new <span class="string">"我的第一篇博客"</span> // 新建markdown文件(<span class="built_in">source</span>文件夹中的_post文件夹下)，编辑保存</span><br><span class="line">$ hexo s // hexo server 预览 本地访问localhost:4000</span><br></pre></td></tr></table></figure>
-
-<h2 id="关联-github"><a href="#关联-github" class="headerlink" title="关联 github"></a>关联 github</h2><p>1、新建 GitHub 项目，命名 username.github.io, username 为你 Github 的用户名，如 anywayshe.github.io<br>注：<font color="#FFD700">github 创建静态博客只能按照命名规则，且只有一个</font></p>
-<hr>
-<p>创建成功项目地址：<a href="https://github.com/anywayshe/anywayshe.github.io.git" target="_blank" rel="noopener">https://github.com/anywayshe/anywayshe.github.io.git</a></p>
-<p>2、安装 git 部署插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>3、添加配置 _config.yml</p>
-<p><img src="/image/step3.jpg" alt="avatar"></p>
-<p>4、依次输入命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ haxo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ haxo g // hexo generate 生成静态文件</span><br><span class="line">$ haxo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
-
-<p>5、访问网站</p>
-<p>可以先刷新你的 github 仓库，看到本地代码已上传</p>
-<p><a href="https://anywayshe.github.io/#" target="_blank" rel="noopener">https://anywayshe.github.io/#</a> // 新建项目的名字，有延迟，多刷几遍</p>
-<p>6、切换主题</p>
-<p>以 yilia 为例</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia // 克隆到themes文件夹，名为yilia</span><br></pre></td></tr></table></figure>
-
-<p>更改配置文件_config.yml<br><img src="/image/step4.jpg" alt="avatar"></p>
-<p>7、部署</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ haxo clean // 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span><br><span class="line">$ haxo g // hexo generate 生成静态文件</span><br><span class="line">$ haxo d // hexo deploy 部署网站</span><br></pre></td></tr></table></figure>
-
-<p>8、刷新访问 ok</p>
-<p><a href="https://anywayshe.github.io/#" target="_blank" rel="noopener">https://anywayshe.github.io/#</a></p>
+        <p>OSI 是 Open System Interconnect 的 缩写，意为开放式系统互联。</p>
+<table>
+<thead>
+<tr>
+<th align="left">OSI 中的层</th>
+<th align="left">功能</th>
+<th align="left">TCP/IP 协议族</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">应用层</td>
+<td align="left">文件传输，电子邮件，文件服务，虚拟终端</td>
+<td align="left">TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet 等</td>
+</tr>
+<tr>
+<td align="left">表示层</td>
+<td align="left">数据格式化，代码转换，数据加密</td>
+<td align="left">无协议</td>
+</tr>
+<tr>
+<td align="left">会话层</td>
+<td align="left">解除或建立与别的接点的联系</td>
+<td align="left">无协议</td>
+</tr>
+<tr>
+<td align="left">传输层</td>
+<td align="left">提供端对端的接口</td>
+<td align="left">TCP，UDP</td>
+</tr>
+<tr>
+<td align="left">网络层</td>
+<td align="left">为数据包选择路由</td>
+<td align="left">IP，ICMP，OSPF，EIGRP，IGMP</td>
+</tr>
+<tr>
+<td align="left">数据链路层</td>
+<td align="left">传输有地址的帧以及错误检测功能</td>
+<td align="left">SLIP，CSLIP，PPP，MTU</td>
+</tr>
+<tr>
+<td align="left">物理层</td>
+<td align="left">以二进制数据形式在物理媒体上传输数据</td>
+<td align="left">ISO2110，IEEE802，IEEE802.2</td>
+</tr>
+</tbody></table>
+<p>OSI 七层协体系 与 TCP/IP 四层体系对比</p>
+<table>
+  <tr>
+    <th>OSI 七层网络模型</th>
+    <th>TCP/IP 四层概念模型</th>
+    <th>对应网络协议</th>
+  </tr>
+  <tr>
+    <td>应用层（Application）</td>
+    <td rowspan="3">应用层</td>
+    <td>HTTP、TFTP, FTP, NFS, WAIS、SMTP</td>
+  </tr>
+  <tr>
+    <td>表示层（Presentation）</td>
+    <td>Telnet, Rlogin, SNMP, Gopher</td>
+  </tr>
+  <tr>
+    <td>会话层（Session）</td>
+    <td>SMTP, DNS</td>
+  </tr>
+  <tr>
+    <td>传输层（Transport）</td>
+    <td>传输层</td>
+    <td>TCP, UDP</td>
+  </tr>
+  <tr>
+    <td>网络层（Network）</td>
+    <td>网络层</td>
+    <td>IP, ICMP, ARP, RARP, AKP, UUCP</td>
+  </tr>
+  <tr>
+    <td>数据链路层（Data Link）</td>
+    <td rowspan="2">数据链路层</td>
+    <td>FDDI, Ethernet, Arpanet, PDN, SLIP, PPP</td>
+  </tr>
+  <tr>
+    <td>物理层（Physical）</td>
+    <td>IEEE 802.1A, IEEE 802.2 到 IEEE 802.11</td>
+  </tr>
+</table>
 
       
 
@@ -189,11 +245,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">TCP/IP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/08/GitHub+Hexo/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/11/网络协议模型/">展开全文 >></a>
         </p>
       
 
@@ -223,39 +290,34 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Axios" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/hello-world/">Hello World</a>
+      <a class="article-title" href="/2018/07/10/Axios/">Axios封装</a>
     </h1>
   
 
         
-        <a href="/2017/07/08/hello-world/" class="archive-article-date">
-  	<time datetime="2017-07-08T08:08:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+        <a href="/2018/07/10/Axios/" class="archive-article-date">
+  	<time datetime="2018-07-10T02:34:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> request(&#123;</span><br><span class="line">  method,</span><br><span class="line">  url,</span><br><span class="line">  data,</span><br><span class="line">  isShowError = <span class="literal">true</span>, // 错误信息提示，默认提示</span><br><span class="line">  resType = <span class="literal">false</span> // 文件返回格式，默认json，<span class="literal">true</span>为blob</span><br><span class="line">&#125;) &#123;</span><br><span class="line">  <span class="built_in">let</span> headers = &#123;&#125;</span><br><span class="line">  // 判断是否为FormData数据</span><br><span class="line">  <span class="keyword">if</span> (data instanceof FormData) &#123;</span><br><span class="line">    headers = &#123;</span><br><span class="line">      <span class="string">'Content-Type'</span>: <span class="string">'multipart/form-data'</span>,</span><br><span class="line">      <span class="string">'token'</span>: store.getters.token ? getToken() : <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    headers = &#123;</span><br><span class="line">      <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">      <span class="string">'token'</span>: store.getters.token ? getToken() : <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    axios(&#123;</span><br><span class="line">      method: method,</span><br><span class="line">      url: `/api<span class="variable">$&#123;url&#125;</span>`,</span><br><span class="line">      data: data,</span><br><span class="line">      timeout: 20000 * 1000,</span><br><span class="line">      headers: headers,</span><br><span class="line">      withCredentials: <span class="literal">false</span>,</span><br><span class="line">      responseType: resType ? <span class="string">'blob'</span> : <span class="string">''</span></span><br><span class="line">    &#125;).<span class="keyword">then</span>((res) =&gt; &#123;</span><br><span class="line">      const &#123; data &#125; = res</span><br><span class="line">      const &#123; code, message &#125; = data</span><br><span class="line">      <span class="keyword">if</span> (code === <span class="string">'10000'</span>) &#123;</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (resType) &#123;</span><br><span class="line">        downLoadFile(res)</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res.status === 401) &#123;</span><br><span class="line">        alert(<span class="string">'token失效，请重新登录！'</span>)</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">          window.location.reload(<span class="literal">true</span>)</span><br><span class="line">        &#125;, 1500)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isShowError) &#123;</span><br><span class="line">          alert(message)</span><br><span class="line">          reject(data)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          resolve(data)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).catch((error) =&gt; &#123;</span><br><span class="line">      alert(error.message)</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        window.location.reload(<span class="literal">true</span>)</span><br><span class="line">      &#125;, 1500)</span><br><span class="line">      reject(error)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">AxiosUtil.get = function(url, isShowError, resType) &#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    method: &apos;get&apos;,</span><br><span class="line">    url: url,</span><br><span class="line">    isShowError: isShowError,</span><br><span class="line">    resType: resType</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AxiosUtil.post = function(url, data, isShowError, option) &#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    method: &apos;post&apos;,</span><br><span class="line">    url: url,</span><br><span class="line">    data: data,</span><br><span class="line">    isShowError,</span><br><span class="line">    option</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 导出excel</span><br><span class="line">export function downLoadFile(res) &#123;</span><br><span class="line">  const b = new Blob([res.data], &#123;</span><br><span class="line">    type: &apos;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8&apos;</span><br><span class="line">  &#125;)</span><br><span class="line">  const url = URL.createObjectURL(b)</span><br><span class="line">  const link = document.createElement(&apos;a&apos;)</span><br><span class="line">  link.download = res[&apos;headers&apos;][&apos;content-disposition&apos;].split(&apos;filename=&apos;)[1]</span><br><span class="line">  link.href = url</span><br><span class="line">  link.click()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
 
@@ -264,11 +326,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/08/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/10/Axios/">展开全文 >></a>
         </p>
       
 
@@ -300,7 +373,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -312,7 +385,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Shaw
+    		&copy; 2020 Shaw
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -387,6 +460,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
@@ -395,15 +476,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
